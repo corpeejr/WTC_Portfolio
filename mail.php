@@ -14,7 +14,8 @@
     $body .= " \n\n\t Message: ".$message;
 
     if(mail($to, $subject, $body, $headers)){
-        echo '<label class="success">Sent your <b>e-mail.</b></label>';
+        echo '<label class="success">Sent your <b>wilmotcorpeejr25@gmail.com</b></label>';
     }else{
         echo '<label class="error">Something went wrong! please try again.</label>';
     }
+    

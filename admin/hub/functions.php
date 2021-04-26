@@ -15,7 +15,7 @@ function logOut() {
 function checkUser(){
 	if(isset($_SESSION['fullName'])){
 	if(isset($_SESSION['email'])){
-		echo "<script> alert('Welcome : " . $_SESSION['fullName'] . " ')</script>";
+		// echo "<script> alert('Welcome : " . $_SESSION['fullName'] . " ')</script>";
 	}
 	}else{
 		echo "<script> window.location = '/WTC_Portfolio/login.php'</script>";

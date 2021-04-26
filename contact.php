@@ -67,10 +67,10 @@
                                         <span class="contact-social-hex"></span>
                                         <a href="www.fb.com/themefisher"><i class="tf-ion-social-facebook"></i></a>
                                     </li> 
-                                    <li>
+                                    <!-- <li>
                                         <span class="contact-social-hex"></span>
                                         <a href="www.twitter.com/themefisher"><i class="tf-ion-social-twitter"></i></a>
-                                    </li>
+                                    </li> -->
                                     <li>
                                         <span class="contact-social-hex"></span>
                                         <a href="#"><i class="tf-ion-social-google"></i></a>
