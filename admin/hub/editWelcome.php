@@ -1,9 +1,9 @@
 <?php 
 	if (isset($_GET['id'])) {
-		$cId = $_GET['id'];
+		$wId = $_GET['id'];
 	}
 
-	$sql = "SELECT * FROM welcome WHERE id = {$cId} ";
+	$sql = "SELECT * FROM welcome WHERE id = {$wId} ";
 	$results = mysqli_query($con, $sql);
 
 	while ($row = mysqli_fetch_assoc($results)) {
@@ -28,7 +28,7 @@
 				<?php editWelcome(); ?>
 
 				<form class="row g-3" method="POST" >
-					<input type="hidden" name="userId" value="<?= $id; ?>">
+					<input type="hidden" name="id" value="<?= $id; ?>">
 				  <div class="col-md-12">
 				    <label for="firstName" class="form-label">Please Enter First Name</label>
 				    <input type="text" class="form-control form-control-lg" name="firstName" value="<?= $firstName; ?>">
@@ -47,7 +47,7 @@
 				  </div>
 				  <div class="col-md-6">
 					<label>Content Author</label>
-					<textarea name="contentAuthors" class="form-control " rows="8" value="<?= $contentAuthors; ?>"></textarea>
+					<textarea name="contentAuthor" class="form-control " rows="8" value="<?= $contentAuthor; ?>"></textarea>
 				  </div>
 	
 				  <div class="col-md-6">

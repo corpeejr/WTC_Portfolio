@@ -2,6 +2,29 @@
 
 <?php include "hub/switcher.php"; ?>
 
+<?php
+
+if(isset($_POST['email']) && $_POST['email'] != ''){
+    if( filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ){
+
+        $userName = $_POST['name'];
+        $userEmail = $_POST['email'];
+        $messageSubject = $_POST['subject'];
+        $message = $_POST['message'];
+
+        $to = "wilmotcorpeejr25@gmail.com";
+        $body = "";
+
+        $body .= "From: ".$userName. "\r\n";
+        $body .= "Email: ".$userEmail. "\r\n";
+        $body .= "Message: ".$message. "\r\n";
+
+        mail($to,$messageSubject,$body);
+    }
+}
+
+
+?>
 
         <main class="site-wrapper">
             <div class="pt-table">
@@ -92,7 +115,7 @@
                                     <div class="col-xs-12 col-sm-6">
                                         <div class="input-field name">
                                             <span class="input-icon" id="name" ><i class="tf-profile-male"></i></span>
-                                            <input type="text" class="form-control"  placeholder="Enter your name">
+                                            <input type="text" class="form-control" name="name"  placeholder="Enter your full name">
                                         </div>
                                     </div> <!-- ./col- -->
                                     <div class="col-xs-12 col-sm-6">

@@ -1,9 +1,9 @@
 <?php 
 	if (isset($_GET['id'])) {
-		$userId = $_GET['id'];
+		$id = $_GET['id'];
 	}
 
-	$sql = "SELECT * FROM users WHERE id = {$userId}";
+	$sql = "SELECT * FROM users WHERE id = {$id}";
 	$results = mysqli_query($con, $sql);
 
 	while ($row = mysqli_fetch_assoc($results)) {
@@ -26,7 +26,7 @@
 				<?php updateUser(); ?>
 
 				<form class="row g-3" method="POST" >
-					<input type="hidden" name="userId" value="<?= $id; ?>">
+					<input type="hidden" name="id" value="<?= $id; ?>">
 				  <div class="col-md-12">
 				    <label for="fullname" class="form-label">Please Enter Full Name</label>
 				    <input type="text" class="form-control form-control-lg" name="fullname" value="<?= $fullname; ?>">

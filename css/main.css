@@ -579,7 +579,7 @@ textarea, label {
 .works-item {
   font-family: "Open Sans", sans-serif;
   margin-bottom: 30px;
-  position: relative; }
+  position: absolute; }
   .works-item img {
     width: 100%; }
   .works-item .overlay {

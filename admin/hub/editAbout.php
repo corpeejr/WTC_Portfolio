@@ -31,7 +31,7 @@
 
                 
 		<form class="row g-3" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="userId" value="<?= $id; ?>">
+        <input type="hidden" name="id" value="<?= $id; ?>">
 		  <div class="col-md-12">
 		    <label>Content</label>
 		    <textarea name="content" class="form-control " rows="8" value="<?= $content; ?>"></textarea>
@@ -68,7 +68,7 @@
 				<button type="submit" class="btn btn-lg btn-primary" name="editAbout">Save Changes</button>
 				  	
 				<!-- Button trigger modal -->
-				<button type="button" class="btn btn-lg btn-danger" data-toggle="modal" data-target="#exampleModal" style="float: right;" name="deleteWelcome">
+				<button type="button" class="btn btn-lg btn-danger" data-toggle="modal" data-target="#exampleModal" style="float: right;" name="deleteAbout">
 					Delete User
 				</button>
 		</div>

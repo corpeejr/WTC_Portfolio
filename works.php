@@ -20,47 +20,90 @@
                                 </div>
                             </div>                            
                         </div> <!-- /.row -->
-
-
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <ul class="filter list-inline">
-                                    <li><a href="#" class="active" data-filter="*">All</a></li>
-                                    <!-- <li><a href="#" data-filter=".Photoshop">Photoshop</a></li>
-                                    <li><a href="#" data-filter=".Illustrator">Illustrator</a></li>
-                                    <li><a href="#" data-filter=".Indesign">Indesign</a></li>
-                                    <li><a href="#" data-filter=".Artworks">Artworks</a></li> -->
-                                </ul>
-                            </div>
-                        </div>
                         <?php 
-                        $sql = "SELECT * FROM works ";
-                        $results = mysqli_query($con, $sql);
+                        // $sql = "SELECT * FROM works ";
+                        // $results = mysqli_query($con, $sql);
 
-                        while ($row = mysqli_fetch_assoc($results))  {
+                        // while ($row = mysqli_fetch_assoc($results))  {
 
-                            $id = $row['id'];
-                            $image = $row['image'];
-                            $projectName = $row['projectName'];
-                            $projects = $row['projects'];
+                        //     $id = $row['id'];
+                        //     $image = $row['image'];
+                        //     $projectName = $row['projectName'];
+                        //     $projects = $row['projects'];
                             
                         ?>
-                        <div class="row isotope-gutter">
+                        <div class="row ">
                         
-                            <div class="col-xs-12 col-sm-6 col-md-4 Photoshop Illustrator">
-                                <figure class="works-item">
-                                    <img src="img/work/<?= $image; ?>" alt="">
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                <figure class="works-item" style="position: relative;">
+                                    <img src="img\work\1619306434Screenshot_1.png" alt="">
                                     <div class="overlay"></div>
                                     <figcaption class="works-inner">
-                                        <h4><?= $projectName; ?>"</h4>
-                                        <p><?= $projects; ?>"</p>
+                                        <h4>Tribute Page</h4>
+                                        <p>Tribute</p>
+                                        <a href="https://codepen.io/W-T-C-13/pen/OJbrGpL" target="_blank" style="color: blue;">CLICK TO VIEW WORK</a>
+
                                     </figcaption>
                                 </figure>
                                 
                             </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                <figure class="works-item" style="position: relative;">
+                                    <img src="img\work\1619342540Screenshot_2.png" alt="">
+                                    <div class="overlay"></div>
+                                    <figcaption class="works-inner">
+                                        <h4>Documentation</h4>
+                                        <p>Document page</p>
+                                        <a href="https://codepen.io/W-T-C-13/pen/BaQEmww" target="_blank" style="color: blue;">CLICK TO VIEW WORK</a>
+
+                                    </figcaption>
+                                </figure>
+                                
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                <figure class="works-item" style="position: relative;">
+                                    <img src="img\work\1619374831Screenshot_3.png" alt="">
+                                    <div class="overlay"></div>
+                                    <figcaption class="works-inner">
+                                        <h4>Product landing</h4>
+                                        <p>Product landing page</p>
+                                        <a href="https://codepen.io/W-T-C-13/pen/BaQEwXp" target="_blank" style="color: blue;">CLICK TO VIEW WORK</a>
+
+                                    </figcaption>
+                                </figure>
+                                
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                <figure class="works-item" style="position: relative;">
+                                    <img src="img\work\1619374875Screenshot_4.png" alt="">
+                                    <div class="overlay"></div>
+                                    <figcaption class="works-inner">
+                                        <h4>Survey Form</h4>
+                                        <p>Validated Login form </p>
+                                        <a href="https://codepen.io/W-T-C-13/pen/OJbrYpp" target="_blank" style="color: blue;">CLICK TO VIEW WORK</a>
+
+                                    </figcaption>
+                                </figure>
+                                
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                <figure class="works-item" style="position: relative;">
+                                    <img src="img\work\1619375060Screenshot_12.png" alt="">
+                                    <div class="overlay"></div>
+                                    <figcaption class="works-inner">
+                                        <h4>Doctors</h4>
+                                        <p>Doctors page</p>
+                                        <!-- <a href="https://freecodecamp.org/certification/w-t-c-13/responsive-web-design" style="color: blue;">CLICK TO VIEW WORK</a> -->
+
+                                    </figcaption>
+                                </figure>
+                                
+                            </div>
+                            
+                            
                           
                         </div> <!-- /.row -->
-                        <?php } ?>
+
                 
                     </div> <!-- /.container -->
                

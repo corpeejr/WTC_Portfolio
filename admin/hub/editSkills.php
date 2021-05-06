@@ -2,51 +2,45 @@
 	if (isset($_GET['id'])) {
 		$id = $_GET['id'];
 	}
-	$sql = "SELECT * FROM works WHERE id = {$id} ";
+	$sql = "SELECT * FROM skills WHERE id = {$id} ";
 	$results = mysqli_query($con, $sql);
 
 	while ($row = mysqli_fetch_assoc($results)) {
 
 		$id = $row['id'];
-		$image = $row['image'];
-		$projectName = $row['projectName'];
-		$projects = $row['projects'];
+		$skillsName = $row['skillsName'];
+		$skillsValue = $row['skillsValue'];
 		
  ?>
 
 <div class="row">
-	<div class="col-lg-8">
+	<div class="col-lg-12">
 		<div class="card">
 			<div class="card-title text-center">
-				<h3 class="display-3">Edit Work</h3>
+				<h3 class="display-3">Edit Skills</h3>
 			</div>
 			<div class="card-body">
-				<?php editWork(); ?>
+				<?php editSkills(); ?>
 
 				<form class="row g-3" method="POST" enctype="multipart/form-data">
 				<input type="hidden" name="id" value="<?= $id; ?>">
 
 				<div class="col-md-6">
-					<label for="image" class="form-label">Select Work Picture</label>
-					<input type="file" class="form-control form-control-lg" name="image">
+					<label for="skillsName" class="form-label">Enter Work skills Name </label>
+					<input type="text" class="form-control form-control-lg" name="skillsName" value="<?= $skillsName; ?>">
 				</div>
 
 				<div class="col-md-6">
-					<label for="projectName" class="form-label">Enter Work project Name </label>
-					<input type="text" class="form-control form-control-lg" name="projectName" value="<?= $projectName; ?>">
-				</div>
-
-				<div class="col-md-6">
-					<label for="projects" class="form-label">Enter Work projects </label>
-					<input type="text" class="form-control form-control-lg" name="projects" value="<?= $projects; ?>">
+					<label for="skillsValue" class="form-label">Enter Work skills Value </label>
+					<input type="number" class="form-control form-control-lg" name="skillsValue" value="<?= $skillsValue; ?>">
 				</div>
 					
 					<div style="width: 100%"> 
 				  		<br><br>
-				  		<button type="submit" class="btn btn-lg btn-primary" name="editWork">Save Changes</button>
+				  		<button type="submit" class="btn btn-lg btn-primary" name="editSkills">Save Changes</button>
 				  	
 				  		<!-- Button trigger modal -->
-						<button type="button" class="btn btn-lg btn-danger" data-toggle="modal" data-target="#exampleModal" style="float: right;" name="deleteWork">
+						<button type="button" class="btn btn-lg btn-danger" data-toggle="modal" data-target="#exampleModal" style="float: right;" name="deleteSkills">
 						  Delete User
 						</button>
 				  	</div>
@@ -54,14 +48,7 @@
 			</div>
 		</div>
 	</div> <!-- col-lg-8 ends -->
-	<div class="col-lg-4">
-		<div class="card">
-			<div class="card-body">
-				<img class="img img-thumbnail" src="../img/work/<?= $image; ?>" width="100%">
-			</div>
-
-		</div>
-	</div>
+	
 </div>
 
 
@@ -74,7 +61,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Delete Work Alert</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Delete Skills Alert</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -94,10 +81,10 @@
 
 <?php 
 
-	if (isset($_POST['deleteWork'])) {
-		$sql = "DELETE FROM work  WHERE id = {$id} ";
+	if (isset($_POST['deleteSkills'])) {
+		$sql = "DELETE FROM  skills WHERE id = {$id} ";
 		if($con->query($sql) === TRUE){
-			echo "<script> window.location = 'work.php'</script>";
+			echo "<script> window.location = 'skills.php'</script>";
 		}else {
 			echo "Error ". $con->error;
 		}

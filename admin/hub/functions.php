@@ -90,7 +90,7 @@ function updateUser(){
 
 	if(isset($_POST['editUser'])) {
 
-		$id = $_POST['userId'];
+		$id = $_POST['id'];
 		$fullname = $_POST['fullname'];
 		$email = $_POST['email'];
 		$image = $_POST['image'];
@@ -105,12 +105,12 @@ function updateUser(){
 		image = '{$image}',
 		phone = '{$phone}',
 		password = '{$password}',
-		role = '{$role}',
+		role = '{$role}'
 		WHERE id = '{$id}' ";
 
 
 		if ($con->query($sql) === TRUE) {
-			echo "<script> window.location = 'users.php'</script>";
+			 echo "<script> window.location = 'users.php'</script>";
 		}else{
 			echo "Error " . $con->error;
 		}
@@ -173,9 +173,9 @@ function viewWelcome(){
 	global $con;
 
 	$sql = "SELECT * FROM welcome";
-	$carousel = mysqli_query($con, $sql);
+	$welcome = mysqli_query($con, $sql);
 
-	while ($rows = mysqli_fetch_assoc($carousel)) {
+	while ($rows = mysqli_fetch_assoc($welcome)) {
 		echo "<tr>"
 			    ."<th>".$rows['id']."</th>"
 				."<th>".$rows['firstName']."</th>"
@@ -212,7 +212,7 @@ function editWelcome(){
 		contentTitle = '{$contentTitle}',
 		content = '{$content}',
 		contentAuthor = '{$contentAuthor}',
-		image = '{$image}',
+		image = '{$image}'
 		WHERE id = '{$id}' ";
 
 
@@ -302,7 +302,7 @@ function editAbout(){
 		language = '{$language}',
 		expertIn = '{$expertIn}',
 		freelance = '{$freelance}',
-		image = '{$image}',
+		image = '{$image}'
 		WHERE id = '{$id}' ";
 
 
@@ -385,11 +385,9 @@ function editWork(){
 		$sql = "INSERT INTO works ( image, projectName, projects) VALUES (  '{$image}', '{$projectName}', '{$projects}')";
 
 		$sql = "UPDATE works SET 
-
-		-- content = '{$content}',
 		image = '{$image}',
 		projectName = '{$projectName}',
-		projects = '{$projects}',
+		projects = '{$projects}'
 		WHERE id = '{$id}' ";
 
 
@@ -465,10 +463,8 @@ function editCertificate(){
 		$sql = "INSERT INTO certificate ( image, certificateName) VALUES (  '{$image}', '{$certificateName}')";
 
 		$sql = "UPDATE certificate SET 
-
-		-- content = '{$content}',
 		image = '{$image}',
-		certificateName = '{$certificateName}',
+		certificateName = '{$certificateName}'
 		WHERE id = '{$id}' ";
 
 
@@ -481,4 +477,147 @@ function editCertificate(){
 
 	}
 }
+
+function addService(){
+	global $con;
+
+	if (isset($_POST['addService'])) {
+		
+
+		// $content = $_POST['content'];
+		
+		// $image 		= 	time().$_FILES['image']['name'];
+		// $image_tmp 	= 	$_FILES['image']['tmp_name'];
+
+		$serviceName = $_POST['serviceName'];
+		$service = $_POST['service'];
+		
+		// move_uploaded_file($image_tmp, "../img/service/$image");
+
+		$sql = "INSERT INTO services ( serviceName, service) VALUES ( '{$serviceName}', '{$service}')";
+
+
+		if ($con->query($sql) === TRUE) {
+			echo "<script> window.location = 'services.php'</script>";
+		}else{
+			echo "error" . $con->error;
+		}
+	}
+}
+
+function viewService(){
+	global $con;
+
+	$sql = "SELECT * FROM services";
+	$service = mysqli_query($con, $sql);
+
+	while ($rows = mysqli_fetch_assoc($service)) {
+		echo "<tr>"
+			    ."<th>".$rows['id']."</th>"
+				// ."<th>".$rows['content']."</th>"
+				// ."<th>".  "<img src='../img/work/{$rows['image']}' width='100px'>" ."</th>"
+				."<th>".$rows['serviceName']."</th>"
+				."<th>".$rows['service']."</th>"
+				."<th>"."<a href='services.php?page=editService&id={$rows['id']}'>edit</th>".
+			 	"</tr>";
+	}
+}
+
+function editService(){
+		global $con;
+
+	if (isset($_POST['editService'])) {
+		$id = $_POST['id'];
+		
+		// $content = $_POST['content'];
+		
+		// $image 		= 	time().$_FILES['image']['name'];
+		// $image_tmp 	= 	$_FILES['image']['tmp_name'];
+
+		$serviceName = $_POST['serviceName'];
+		$service = $_POST['service'];
+		
+		// move_uploaded_file($image_tmp, "../img/work/$image");
+
+		$sql = "INSERT INTO services ( serviceName, service) VALUES ('{$serviceName}', '{$service}')";
+
+		$sql = "UPDATE services SET 
+		serviceName = '{$serviceName}',
+		service = '{$service}'
+		WHERE id = '{$id}' ";
+
+
+		if ($con->query($sql) === TRUE) {
+			echo "<script> window.location = 'services.php'</script>";
+		}else{
+			echo "error" . $con->error;
+		}
+
+
+	}
+}
+
+
+function addSkills(){
+	global $con;
+
+	if (isset($_POST['addSkills'])) {
+
+		$skillsName = $_POST['skillsName'];
+		$skillsValue = $_POST['skillsValue'];
+
+		$sql = "INSERT INTO skills (skillsName, skillsValue) VALUES ( '{$skillsName}', '{$skillsValue}')";
+
+
+		if ($con->query($sql) === TRUE) {
+			echo "<script> window.location = 'skills.php'</script>";
+		}else{
+			echo "error" . $con->error;
+		}
+	}
+}
+
+function viewSkills(){
+	global $con;
+
+	$sql = "SELECT * FROM skills";
+	$skills = mysqli_query($con, $sql);
+
+	while ($rows = mysqli_fetch_assoc($skills)) {
+		echo "<tr>"
+			    ."<th>".$rows['id']."</th>"
+				."<th>".$rows['skillsName']."</th>"
+				."<th>".$rows['skillsValue']."</th>"
+				."<th>"."<a href='skills.php?page=editSkills&id={$rows['id']}'>edit</th>".
+			 	"</tr>";
+	}
+}
+
+function editSkills(){
+		global $con;
+
+	if (isset($_POST['editSkills'])) {
+		$id = $_POST['id'];
+
+		$skillsName = $_POST['skillsName'];
+		$skillsValue = $_POST['skillsValue'];
+	
+		$sql = "INSERT INTO skills (skillsName, skillsValue) VALUES ('{$skillsName}', '{$skillsValue}')";
+
+		$sql = "UPDATE skills SET 
+		skillsName = '{$skillsName}',
+		skillsValue = '{$skillsValue}'
+		WHERE id = '{$id}' ";
+
+
+		if ($con->query($sql) === TRUE) {
+			echo "<script> window.location = 'skills.php'</script>";
+		}else{
+			echo "error" . $con->error;
+		}
+
+
+	}
+}
+
 ?>

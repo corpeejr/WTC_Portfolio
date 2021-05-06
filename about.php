@@ -51,61 +51,9 @@ while ($row = mysqli_fetch_assoc($results))  {
                                 </div> <!-- /.about-author -->
                             </div> <!-- /.col -->
 
-                            <div class="col-xs-12 col-md-6">
-                            <div class="section-title clear">
-                                    <h3>Skills</h3>
-                                </div>
-                                <div class="skill-wrapper">
-                                    <div class="progress clear" >
-                                        <div class="skill-name">PHP & MYSQL</div>
-                                        <div class="skill-bar">
-                                            <div class="bar"></div>
-                                        </div>
-                                        <div class="skill-lavel" data-skill-value="85%"></div>
-                                    </div> <!-- /.progress -->
-                                    <div class="progress clear" >
-                                        <div class="skill-name">CSS3</div>
-                                        <div class="skill-bar">
-                                            <div class="bar"></div>
-                                        </div>
-                                        <div class="skill-lavel" data-skill-value="95%"></div>
-                                    </div> <!-- /.progress -->
-                                    <div class="progress clear" >
-                                        <div class="skill-name">Online Marketing</div>
-                                        <div class="skill-bar">
-                                            <div class="bar"></div>
-                                        </div>
-                                        <div class="skill-lavel" data-skill-value="85%"></div>
-                                    </div> <!-- /.progress -->
-                                    <div class="progress clear" >
-                                        <div class="skill-name">HTML5</div>
-                                        <div class="skill-bar">
-                                            <div class="bar"></div>
-                                        </div>
-                                        <div class="skill-lavel" data-skill-value="95%"></div>
-                                    </div> <!-- /.progress -->
-                                    <div class="progress clear" >
-                                        <div class="skill-name">JavaScript</div>
-                                        <div class="skill-bar">
-                                            <div class="bar"></div>
-                                        </div>
-                                        <div class="skill-lavel" data-skill-value="85%"></div>
-                                    </div> <!-- /.progress -->
-                                    <div class="progress clear" >
-                                        <div class="skill-name">Git hub</div>
-                                        <div class="skill-bar">
-                                            <div class="bar"></div>
-                                        </div>
-                                        <div class="skill-lavel" data-skill-value="85%"></div>
-                                    </div> <!-- /.progress -->
-                                    <div class="progress clear" >
-                                        <div class="skill-name">Hosting</div>
-                                        <div class="skill-bar">
-                                            <div class="bar"></div>
-                                        </div>
-                                        <div class="skill-lavel" data-skill-value="80%"></div>
-                                    </div> <!-- /.progress -->
-                                </div> <!-- /.skill-wrapper -->
+                            <?php include "hub/skills.php"; ?>
+
+                           
                             </div> <!-- /.col -->
                         </div> <!-- /.row -->
                     </div> <!-- /.container -->
